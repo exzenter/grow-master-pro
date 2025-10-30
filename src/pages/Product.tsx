@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Package, Leaf, BarChart3 } from "lucide-react";
-import heroImage from "@/assets/hero-cannabis.jpg";
+import heroImage from "@/assets/hero-substrate-focus.jpg";
 
 const Product = () => {
   return (
@@ -55,36 +55,32 @@ const Product = () => {
             </div>
           </div>
           
-          {/* Composition Section */}
+          {/* Quality Features */}
           <section className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Zusammensetzung</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Eigenschaften</h2>
             <Card className="p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                     <Package className="h-5 w-5 text-primary" />
-                    Hauptbestandteile
+                    Substrat-Qualität
                   </h3>
                   <ul className="space-y-3">
-                    <li className="flex justify-between">
-                      <span>Hochwertige Torfmischung</span>
-                      <span className="text-muted-foreground">40%</span>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span>Premium-Mischung aus natürlichen Komponenten</span>
                     </li>
-                    <li className="flex justify-between">
-                      <span>Kokosfaser</span>
-                      <span className="text-muted-foreground">30%</span>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span>Optimale Wasser- und Luftdurchlässigkeit</span>
                     </li>
-                    <li className="flex justify-between">
-                      <span>Perlite</span>
-                      <span className="text-muted-foreground">15%</span>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span>Perfekte Struktur für Wurzelwachstum</span>
                     </li>
-                    <li className="flex justify-between">
-                      <span>Vermiculit</span>
-                      <span className="text-muted-foreground">10%</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span>Organische Zusätze</span>
-                      <span className="text-muted-foreground">5%</span>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span>Langzeitstabil und wiederverwendbar</span>
                     </li>
                   </ul>
                 </div>
@@ -92,28 +88,24 @@ const Product = () => {
                 <div>
                   <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                     <Leaf className="h-5 w-5 text-primary" />
-                    Nährstoffgehalt
+                    Nährstoffversorgung
                   </h3>
                   <ul className="space-y-3">
-                    <li className="flex justify-between">
-                      <span>Stickstoff (N)</span>
-                      <span className="text-muted-foreground">14%</span>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span>Ausgewogene NPK-Zusammensetzung</span>
                     </li>
-                    <li className="flex justify-between">
-                      <span>Phosphor (P)</span>
-                      <span className="text-muted-foreground">16%</span>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span>pH-Wert optimal eingestellt (5.8-6.3)</span>
                     </li>
-                    <li className="flex justify-between">
-                      <span>Kalium (K)</span>
-                      <span className="text-muted-foreground">18%</span>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span>Ausreichend für 4-6 Wochen ohne Düngung</span>
                     </li>
-                    <li className="flex justify-between">
-                      <span>pH-Wert</span>
-                      <span className="text-muted-foreground">5.8-6.3</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span>EC-Wert</span>
-                      <span className="text-muted-foreground">1.2-1.8 mS/cm</span>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span>Mikroorganismen-freundlich</span>
                     </li>
                   </ul>
                 </div>
