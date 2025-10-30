@@ -2,57 +2,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, TrendingUp, Droplets, Thermometer } from "lucide-react";
+import { CheckCircle2, TrendingUp, Award, Users } from "lucide-react";
 
 const GrowthReports = () => {
-  const reports = [
-    {
-      id: 1,
-      title: "Wachstumszyklus Purple Haze",
-      strain: "Purple Haze",
-      duration: "12 Wochen",
-      yield: "450g",
-      date: "März 2024",
-      description: "Kompletter Wachstumszyklus von der Keimung bis zur Ernte. Beeindruckendes Wurzelwachstum und kräftige Blütenbildung.",
-      stats: [
-        { label: "Höhe", value: "120cm" },
-        { label: "pH-Wert", value: "6.0-6.2" },
-        { label: "Temperatur", value: "22-26°C" },
-        { label: "Luftfeuchtigkeit", value: "45-55%" }
-      ]
-    },
-    {
-      id: 2,
-      title: "Northern Lights Grow",
-      strain: "Northern Lights",
-      duration: "10 Wochen",
-      yield: "380g",
-      date: "Februar 2024",
-      description: "Schneller Wachstumszyklus mit hervorragender Nährstoffaufnahme. Keine Mangelerscheinungen während des gesamten Grows.",
-      stats: [
-        { label: "Höhe", value: "95cm" },
-        { label: "pH-Wert", value: "5.9-6.1" },
-        { label: "Temperatur", value: "20-24°C" },
-        { label: "Luftfeuchtigkeit", value: "40-50%" }
-      ]
-    },
-    {
-      id: 3,
-      title: "White Widow Experiment",
-      strain: "White Widow",
-      duration: "11 Wochen",
-      yield: "420g",
-      date: "Januar 2024",
-      description: "Vergleichstest mit anderem Substrat. Unser Produkt zeigte deutlich bessere Ergebnisse in allen Wachstumsphasen.",
-      stats: [
-        { label: "Höhe", value: "110cm" },
-        { label: "pH-Wert", value: "6.0-6.3" },
-        { label: "Temperatur", value: "21-25°C" },
-        { label: "Luftfeuchtigkeit", value: "45-55%" }
-      ]
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -60,88 +12,185 @@ const GrowthReports = () => {
       <div className="pt-24 pb-20">
         <div className="container mx-auto px-4">
           {/* Header */}
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">
+              Erfahrungsbericht
+            </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Wachstumsberichte
+              Cannabis-Erde von NeulandHum
             </h1>
             <p className="text-xl text-muted-foreground">
-              Dokumentierte Grows mit unserem Premium-Substrat. Alle Berichte zeigen die außergewöhnliche Qualität und Leistung unseres Produkts.
+              Ein ausführlicher Praxisbericht über langjährige Erfahrungen als professioneller Grower
             </p>
           </div>
           
-          {/* Reports Grid */}
-          <div className="space-y-12">
-            {reports.map((report) => (
-              <Card key={report.id} className="overflow-hidden hover:shadow-elevated transition-all duration-300">
-                <div className="grid grid-cols-1 lg:grid-cols-3">
-                  {/* Image placeholder */}
-                  <div className="bg-gradient-primary h-64 lg:h-auto flex items-center justify-center">
-                    <TrendingUp className="h-20 w-20 text-primary-foreground opacity-50" />
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="lg:col-span-2 p-8">
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      <Badge variant="secondary">{report.strain}</Badge>
-                      <Badge variant="outline" className="flex items-center gap-1">
-                        <Calendar className="h-3 w-3" />
-                        {report.date}
-                      </Badge>
-                    </div>
-                    
-                    <h2 className="text-2xl font-bold mb-3">{report.title}</h2>
-                    <p className="text-muted-foreground mb-6">{report.description}</p>
-                    
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                      <div>
-                        <div className="text-sm text-muted-foreground mb-1">Dauer</div>
-                        <div className="font-bold">{report.duration}</div>
-                      </div>
-                      <div>
-                        <div className="text-sm text-muted-foreground mb-1">Ertrag</div>
-                        <div className="font-bold text-primary">{report.yield}</div>
-                      </div>
-                      <div className="col-span-2 md:col-span-2">
-                        <div className="text-sm text-muted-foreground mb-1">Ergebnis</div>
-                        <div className="font-bold">Hervorragend</div>
-                      </div>
-                    </div>
-                    
-                    <div className="border-t border-border pt-6">
-                      <h3 className="font-semibold mb-4">Wachstumsbedingungen</h3>
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {report.stats.map((stat, index) => (
-                          <div key={index} className="flex items-start gap-2">
-                            <div className="w-8 h-8 rounded bg-primary/10 flex items-center justify-center flex-shrink-0">
-                              {index === 0 && <TrendingUp className="h-4 w-4 text-primary" />}
-                              {index === 1 && <Droplets className="h-4 w-4 text-primary" />}
-                              {index === 2 && <Thermometer className="h-4 w-4 text-primary" />}
-                              {index === 3 && <Droplets className="h-4 w-4 text-primary" />}
-                            </div>
-                            <div>
-                              <div className="text-xs text-muted-foreground">{stat.label}</div>
-                              <div className="text-sm font-semibold">{stat.value}</div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+          {/* Main Report */}
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Introduction */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold mb-4">Die Suche nach der perfekten Lösung</h2>
+              <p className="text-muted-foreground mb-4">
+                Bevor ich auf die Erde von NeulandHum gestoßen bin, habe ich viele verschiedene Substrate ausprobiert – sowohl Erde als auch Coco – stets in Kombination mit verschiedenen Düngeschemata.
+              </p>
+              <p className="text-muted-foreground mb-4">
+                Die Ergebnisse waren zwar ordentlich, jedoch war der Zeit-, Material- und Kontrollaufwand hoch. Ständiges Messen, Anpassen, Düngen – all das machte das Ganze kompliziert und fehleranfällig, gerade für Einsteiger.
+              </p>
+              <p className="text-muted-foreground">
+                Auch vorgedüngte Erden anderer Anbieter versprachen Vereinfachung – in der Praxis war dies jedoch oft nur teilweise erfüllt.
+              </p>
+            </Card>
+
+            {/* The Turning Point */}
+            <Card className="p-8 border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Award className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold mb-2">Dann kam der Wendepunkt: NeulandHum</h2>
+                  <p className="text-muted-foreground">
+                    Durch einen persönlichen Kontakt wurde ich auf NeulandHum aufmerksam – ein Unternehmen mit langjähriger Erfahrung im professionellen Gartenbau. Gemeinsam mit Biologen wurde dort eine speziell auf Cannabis abgestimmte Erde entwickelt.
+                  </p>
+                </div>
+              </div>
+              <p className="text-muted-foreground pl-16">
+                Ich hatte das Glück, diese Erde als Headgrower exklusiv testen zu dürfen – unter realen Bedingungen und im Vergleich mit anderen Produkten.
+              </p>
+            </Card>
+
+            {/* Results */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold mb-6">Die Ergebnisse sprechen für sich</h2>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold">Kein Nachdüngen notwendig</span>
+                    <span className="text-muted-foreground"> – die Pflanzen waren über mehrere Monate hinweg vollständig versorgt</span>
                   </div>
                 </div>
-              </Card>
-            ))}
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold">Konstantes, gesundes Wachstum</span>
+                    <span className="text-muted-foreground"> vom Anfang bis zur Ernte</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold">Keine Über- oder Unterversorgung</span>
+                    <span className="text-muted-foreground"> – stabile Bedingungen für die Pflanze</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold">Extrem einfache Anwendung</span>
+                    <span className="text-muted-foreground"> – perfekt für Einsteiger, angenehm für Profis</span>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Comparison */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold mb-6">Im direkten Vergleich mit anderen Erden</h2>
+              <div className="space-y-4 mb-6">
+                <p className="text-muted-foreground">
+                  In neutralen Setups mit identischer Behandlung war die Erde von NeulandHum durchweg führend. Im besten Fall waren andere Erden gleichauf, in vielen Fällen lag die Ernte mit NeulandHum jedoch <span className="font-bold text-foreground">100–200 % höher</span>.
+                </p>
+              </div>
+              
+              <div className="border-t border-border pt-6">
+                <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+                  <TrendingUp className="h-5 w-5 text-primary" />
+                  Mein persönlicher Bestwert
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-primary/5 rounded-lg p-6 border border-primary/20">
+                    <div className="text-3xl font-bold text-primary mb-2">2,4 g/Watt</div>
+                    <div className="text-sm text-muted-foreground">Im einfachen Setup – ohne Nachdüngung</div>
+                  </div>
+                  <div className="bg-primary/5 rounded-lg p-6 border border-primary/20">
+                    <div className="text-3xl font-bold text-primary mb-2">197,5 g</div>
+                    <div className="text-sm text-muted-foreground">Ertrag aus einem 11-Liter-Topf</div>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground mt-4 italic">
+                  Mit Genetik eines bekannten Saatgut-Herstellers. Selbstverständlich wurde alles ordnungsgemäß dokumentiert und entsorgt.
+                </p>
+              </div>
+            </Card>
+
+            {/* Water Quality */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold mb-4">Auch bei der Wasserqualität flexibel</h2>
+              <p className="text-muted-foreground mb-4">
+                Ich habe Durchläufe mit pH-angepasstem Wasser und mit normalem Leitungswasser gemacht.
+              </p>
+              <div className="bg-muted/50 rounded-lg p-6">
+                <p className="font-semibold mb-2">Ergebnis:</p>
+                <p className="text-muted-foreground">
+                  Beide Varianten führten zu einem gesunden, kräftigen Wuchs und einer erfolgreichen Ernte. Die Erde verzeiht also Fehler – ein weiterer Pluspunkt, besonders für Anfänger.
+                </p>
+              </div>
+            </Card>
+
+            {/* Community Feedback */}
+            <Card className="p-8 border-primary/20">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Users className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold mb-2">Rückmeldungen aus der Community</h2>
+                  <p className="text-muted-foreground">
+                    Die Ergebnisse sprachen sich schnell herum – ich durfte die Erde an befreundete Grower, Headshops und CSCs weitergeben.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-gradient-primary rounded-lg p-6">
+                <div className="text-center">
+                  <div className="text-5xl font-bold text-primary-foreground mb-2">100%</div>
+                  <div className="text-primary-foreground/90">Weiterempfehlungsquote</div>
+                </div>
+              </div>
+              <p className="text-muted-foreground mt-4">
+                Die Rückmeldungen waren durchweg positiv.
+              </p>
+            </Card>
+
+            {/* Conclusion */}
+            <Card className="p-8 bg-gradient-to-br from-primary/10 via-transparent to-primary/5">
+              <h2 className="text-2xl font-bold mb-4">Fazit: Minimalprinzip = Maximales Ergebnis</h2>
+              <p className="text-muted-foreground mb-4">
+                Dank der Legalisierung darf heute jeder Erwachsene bis zu drei Pflanzen privat anbauen.
+                Viele sagen jedoch: „Das ist mir zu aufwendig, ich will mich nicht mit Düngern, pH-Werten oder Nährstoffplänen herumschlagen."
+              </p>
+              <div className="bg-background/80 backdrop-blur rounded-lg p-6 mb-4">
+                <p className="font-semibold text-lg mb-3">Genau hier setzt diese Erde an:</p>
+                <p className="text-2xl font-bold text-primary mb-4">Minimaler Aufwand, maximaler Ertrag.</p>
+                <div className="space-y-2 text-muted-foreground">
+                  <p>→ Einfach Samen in die Erde</p>
+                  <p>→ Regelmäßig gießen</p>
+                  <p>→ Licht oder Sonne bereitstellen</p>
+                  <p>→ Ernten</p>
+                </div>
+              </div>
+              <p className="text-muted-foreground mb-4">
+                Keine komplizierten Pläne, keine zusätzlichen Produkte, kein Frust.
+              </p>
+              <p className="text-muted-foreground mb-6">
+                <span className="font-semibold text-foreground">Das Ergebnis:</span> Hochwertiges, aromatisches Cannabis in stabiler Menge – ganz ohne Stress.
+              </p>
+              <div className="border-t border-border pt-6">
+                <p className="text-muted-foreground italic">
+                  Ich bin stolz, diese Erde nun offiziell vertreten und vertreiben zu dürfen – als Produkt, das meine eigene Leidenschaft mit echtem Mehrwert für andere verbindet.
+                </p>
+              </div>
+            </Card>
           </div>
-          
-          {/* Info Section */}
-          <Card className="mt-16 p-8 bg-muted/50">
-            <h3 className="text-xl font-bold mb-4">Über unsere Wachstumsberichte</h3>
-            <p className="text-muted-foreground mb-4">
-              Alle hier dokumentierten Grows wurden unter kontrollierten Bedingungen durchgeführt und sorgfältig dokumentiert. Die Ergebnisse zeigen die außergewöhnliche Qualität unseres Substrats über verschiedene Sorten und Wachstumsbedingungen hinweg.
-            </p>
-            <p className="text-muted-foreground">
-              Jeder Bericht enthält detaillierte Informationen über Nährstoffgabe, pH-Werte, Umgebungsbedingungen und Beobachtungen während des gesamten Wachstumszyklus.
-            </p>
-          </Card>
         </div>
       </div>
       
