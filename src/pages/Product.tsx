@@ -2,13 +2,42 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, Package, Leaf, BarChart3 } from "lucide-react";
+import { CheckCircle2, Package, Leaf, BarChart3, Truck, Calendar, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-substrate-focus.jpg";
-import ContactSignupForm from "@/components/ContactSignupForm";
+import { useState } from "react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 const Product = () => {
+  const [showBulkShipping, setShowBulkShipping] = useState(false);
+
+  const lkwPrices = [
+    { city: "München", price: "650€" },
+    { city: "Frankfurt", price: "500€" },
+    { city: "Hamburg", price: "1.250€" },
+    { city: "Köln", price: "900€" },
+    { city: "Berlin", price: "900€" },
+    { city: "Leipzig", price: "750€" },
+    { city: "Linz", price: "900€" },
+    { city: "Salzburg", price: "900€" },
+    { city: "Wien", price: "1.300€" },
+    { city: "Innsbruck", price: "950€" },
+    { city: "Bozen", price: "1.100€" },
+    { city: "Mailand", price: "1.600€" },
+    { city: "Turin", price: "1.800€" },
+    { city: "Rom", price: "2.500€" },
+    { city: "Metz", price: "1.000€" },
+    { city: "Straßburg", price: "750€" },
+    { city: "Prag", price: "800€" },
+    { city: "Pilsen", price: "600€" },
+    { city: "Karlsbad", price: "550€" },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -26,15 +55,27 @@ const Product = () => {
             </div>
             
             <div className="flex flex-col justify-center">
-              <Badge className="w-fit mb-4 bg-primary/10 text-primary hover:bg-primary/20 border border-primary/30">
-                Premium Qualität
-              </Badge>
+              <div className="flex items-center gap-3 mb-4">
+                <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border border-primary/30">
+                  Premium Qualität
+                </Badge>
+                <Badge className="bg-accent/10 text-accent-foreground hover:bg-accent/20 border border-accent/30 flex items-center gap-1">
+                  <Calendar className="h-3 w-3" />
+                  Launch: 01.02.2026
+                </Badge>
+              </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Premium Cannabis Wachstumssubstrat
               </h1>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-xl text-muted-foreground mb-6">
                 Unser hochwertiges Substrat wurde speziell für den Anbau von Cannabis entwickelt und bietet die perfekte Balance aus Nährstoffen, Drainage und Luftzirkulation.
               </p>
+              
+              {/* B2C Price */}
+              <div className="mb-6 p-4 bg-primary/5 rounded-xl border border-primary/20">
+                <p className="text-sm text-muted-foreground mb-1">Empfohlener Verkaufspreis (40L Sack)</p>
+                <p className="text-3xl font-bold text-primary">19,99€</p>
+              </div>
               
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-2 bg-primary/5 px-3 py-1.5 rounded-full">
@@ -51,10 +92,96 @@ const Product = () => {
                 </div>
               </div>
               
-              {/* Contact Form instead of Order Button */}
-              <ContactSignupForm />
+              <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
+                <Link to="/kontakt">Jetzt anfragen & 10% Rabatt sichern</Link>
+              </Button>
             </div>
           </div>
+
+          {/* B2B Pricing Section */}
+          <section className="mb-20">
+            <h2 className="text-3xl font-bold mb-8 text-center">B2B Preise</h2>
+            <Card className="p-8">
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+                <Package className="h-5 w-5 text-primary" />
+                Preisstaffel (40 Liter Säcke)
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">54 Säcke pro Palette</p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div className="p-4 bg-muted/50 rounded-lg text-center">
+                  <p className="text-sm text-muted-foreground mb-1">1 Palette</p>
+                  <p className="text-2xl font-bold text-primary">10,30€</p>
+                  <p className="text-xs text-muted-foreground">pro Sack</p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg text-center">
+                  <p className="text-sm text-muted-foreground mb-1">4 Paletten</p>
+                  <p className="text-2xl font-bold text-primary">8,60€</p>
+                  <p className="text-xs text-muted-foreground">pro Sack</p>
+                </div>
+                <div className="p-4 bg-muted/50 rounded-lg text-center">
+                  <p className="text-sm text-muted-foreground mb-1">12 Paletten</p>
+                  <p className="text-2xl font-bold text-primary">7,80€</p>
+                  <p className="text-xs text-muted-foreground">pro Sack</p>
+                </div>
+                <div className="p-4 bg-primary/10 rounded-lg text-center border-2 border-primary/30">
+                  <p className="text-sm text-muted-foreground mb-1">26 Paletten (LKW)</p>
+                  <p className="text-2xl font-bold text-primary">6,20€</p>
+                  <p className="text-xs text-muted-foreground">pro Sack</p>
+                </div>
+              </div>
+
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+                <Truck className="h-5 w-5 text-primary" />
+                Lieferkosten
+              </h3>
+              
+              <div className="space-y-4">
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <p className="font-medium mb-1">Stückgutversand Innerdeutsch</p>
+                  <p className="text-xl font-bold text-primary">95€ / Palette</p>
+                </div>
+                
+                <p className="text-sm text-muted-foreground">
+                  Ab Bestellung von mehr als 5 Paletten: Standortabhängig, da mit eigener Logistik kalkuliert werden kann.
+                </p>
+
+                {/* Expandable LKW Prices */}
+                <Collapsible open={showBulkShipping} onOpenChange={setShowBulkShipping}>
+                  <CollapsibleTrigger asChild>
+                    <Button variant="outline" className="w-full justify-between">
+                      <span>LKW-Lieferpreise anzeigen (ab 1 Palette möglich)</span>
+                      <ChevronDown className={`h-4 w-4 transition-transform ${showBulkShipping ? 'rotate-180' : ''}`} />
+                    </Button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-4">
+                    <div className="p-4 bg-muted/30 rounded-lg border border-border">
+                      <p className="text-sm text-muted-foreground mb-4">
+                        Komplette LKW-Ladung Lieferpreise (ab 1 Palette bis volle LKW-Ladung):
+                      </p>
+                      
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                        {lkwPrices.map((item) => (
+                          <div key={item.city} className="p-2 bg-background rounded border border-border/50">
+                            <p className="text-xs text-muted-foreground">{item.city}</p>
+                            <p className="font-semibold text-primary">{item.price}</p>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      <div className="mt-4 p-3 bg-accent/10 rounded-lg">
+                        <p className="text-sm font-medium mb-2">Schweiz</p>
+                        <p className="text-xs text-muted-foreground">
+                          Pauschalpreise schwer möglich aufgrund variabler Mautkosten (ca. 2€/km auf manchen Strecken). 
+                          Richtwert: 1.400€ - 2.500€ (ca. 4€/km)
+                        </p>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </div>
+            </Card>
+          </section>
           
           {/* Quality Features */}
           <section className="mb-20">
@@ -200,8 +327,8 @@ const Product = () => {
               <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
                 Sehen Sie die beeindruckenden Ergebnisse in unseren dokumentierten Wachstumsberichten
               </p>
-              <Button size="lg" variant="secondary">
-                Zu den Wachstumsberichten
+              <Button asChild size="lg" variant="secondary">
+                <Link to="/wachstumsberichte">Zu den Wachstumsberichten</Link>
               </Button>
             </Card>
           </section>

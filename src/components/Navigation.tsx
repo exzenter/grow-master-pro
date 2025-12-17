@@ -51,8 +51,8 @@ const Navigation = () => {
             >
               Erfahrungen
             </Link>
-            <Button className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
-              Kontakt
+            <Button asChild className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
+              <Link to="/kontakt">Kontakt</Link>
             </Button>
           </div>
         </div>
