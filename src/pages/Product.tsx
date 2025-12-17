@@ -1,10 +1,12 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Package, Leaf, BarChart3 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-substrate-focus.jpg";
+import ContactSignupForm from "@/components/ContactSignupForm";
 
 const Product = () => {
   return (
@@ -18,13 +20,13 @@ const Product = () => {
             <div>
               <img 
                 src={heroImage} 
-                alt="Premium Cannabis Wachstumssubstrat" 
-                className="rounded-lg shadow-elevated w-full"
+                alt="Premium Cannabis Wachstumssubstrat mit reichhaltiger Erde" 
+                className="rounded-2xl shadow-2xl w-full border-4 border-primary/20"
               />
             </div>
             
             <div className="flex flex-col justify-center">
-              <Badge className="w-fit mb-4 bg-primary/10 text-primary hover:bg-primary/20">
+              <Badge className="w-fit mb-4 bg-primary/10 text-primary hover:bg-primary/20 border border-primary/30">
                 Premium Qualität
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -35,23 +37,22 @@ const Product = () => {
               </p>
               
               <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 bg-primary/5 px-3 py-1.5 rounded-full">
                   <CheckCircle2 className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Kompletter Lebenszyklus</span>
+                  <span className="text-sm font-medium">Kompletter Lebenszyklus</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 bg-primary/5 px-3 py-1.5 rounded-full">
                   <CheckCircle2 className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Bio-zertifiziert</span>
+                  <span className="text-sm font-medium">Bio-zertifiziert</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 bg-primary/5 px-3 py-1.5 rounded-full">
                   <CheckCircle2 className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Laborgeprüft</span>
+                  <span className="text-sm font-medium">Laborgeprüft</span>
                 </div>
               </div>
               
-              <Button size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 w-fit">
-                Jetzt bestellen
-              </Button>
+              {/* Contact Form instead of Order Button */}
+              <ContactSignupForm />
             </div>
           </div>
           
