@@ -20,13 +20,20 @@ const ContactSignupForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Here you would normally send the data to your backend
-    console.log("Form submitted:", formData);
+    const subject = encodeURIComponent("Kontaktanfrage über premium-erde.de");
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `E-Mail: ${formData.email}\n` +
+      `Telefon: ${formData.phone || "Nicht angegeben"}\n\n` +
+      `Nachricht:\n${formData.message || "Keine Nachricht"}`
+    );
+    
+    window.location.href = `mailto:info@premium-erde.de?subject=${subject}&body=${body}`;
     
     setIsSubmitted(true);
     toast({
-      title: "Anfrage gesendet!",
-      description: "Wir melden uns in Kürze bei Ihnen. Ihr 10% Rabattcode wird per E-Mail zugestellt.",
+      title: "E-Mail-Programm geöffnet!",
+      description: "Bitte senden Sie die E-Mail über Ihr E-Mail-Programm ab.",
     });
   };
 
