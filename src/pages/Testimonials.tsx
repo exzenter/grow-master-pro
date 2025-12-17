@@ -9,7 +9,7 @@ const Testimonials = () => {
     {
       id: 1,
       name: "Michael S.",
-      location: "Berlin",
+      location: "Salzburg, Österreich",
       rating: 5,
       date: "März 2024",
       text: "Nach jahrelangem Experimentieren mit verschiedenen Substraten bin ich endlich auf dieses Premium-Produkt gestoßen. Die Ergebnisse sprechen für sich - kräftigeres Wachstum, gesündere Pflanzen und deutlich höhere Erträge. Besonders beeindruckend ist die gleichbleibende Qualität.",
@@ -27,7 +27,7 @@ const Testimonials = () => {
     {
       id: 3,
       name: "Thomas B.",
-      location: "Hamburg",
+      location: "Linz, Österreich",
       rating: 5,
       date: "Februar 2024",
       text: "Als erfahrener Grower habe ich schon viele Substrate getestet. Was mich hier überzeugt hat, ist die perfekte Balance zwischen Wasserspeicherung und Drainage. Keinerlei Staunässe, hervorragende Wurzelentwicklung und die Pflanzen sehen einfach gesund aus.",
@@ -36,7 +36,7 @@ const Testimonials = () => {
     {
       id: 4,
       name: "Sarah W.",
-      location: "Köln",
+      location: "Regensburg",
       rating: 5,
       date: "Januar 2024",
       text: "Nachhaltigkeit ist mir wichtig, daher war ich begeistert zu erfahren, dass dieses Substrat aus biologischen Komponenten besteht. Die Qualität leidet keineswegs darunter - im Gegenteil! Meine Pflanzen haben noch nie so gut ausgesehen.",
@@ -45,7 +45,7 @@ const Testimonials = () => {
     {
       id: 5,
       name: "Markus R.",
-      location: "Frankfurt",
+      location: "Wien, Österreich",
       rating: 5,
       date: "Januar 2024",
       text: "Ich habe parallel mit diesem und einem anderen bekannten Substrat angebaut. Der Unterschied war deutlich sichtbar - die Pflanzen im Premium-Substrat waren kräftiger, hatten dunklere Blätter und entwickelten deutlich mehr Blütenmasse. Absolut empfehlenswert!",
@@ -54,7 +54,7 @@ const Testimonials = () => {
     {
       id: 6,
       name: "Julia M.",
-      location: "Stuttgart",
+      location: "Nürnberg",
       rating: 5,
       date: "Dezember 2023",
       text: "Was mich am meisten überzeugt hat, ist die Langzeitwirkung der Nährstoffe. Ich musste bis zu 6 Monate lang überhaupt nicht nachdüngen - bei anderen Substraten war das nach wenigen Wochen nötig. Das spart Zeit, Geld und vereinfacht den gesamten Anbauprozess enorm.",
