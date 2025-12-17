@@ -15,7 +15,7 @@ const Navigation = () => {
             <div className="p-2 rounded-lg bg-gradient-primary shadow-glow transition-all duration-300 group-hover:scale-105">
               <Leaf className="h-6 w-6 text-primary-foreground" />
             </div>
-            <span className="font-bold text-xl text-foreground">GrowSubstrate</span>
+            <span className="font-bold text-xl text-foreground">Premium Erde</span>
           </Link>
           
           <div className="hidden md:flex items-center gap-6">

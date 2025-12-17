@@ -36,7 +36,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">E-Mail</p>
-                <p className="font-medium">info@growsubstrate.de</p>
+                <p className="font-medium">info@premium-erde.de</p>
               </div>
             </Card>
             
