@@ -90,5 +90,10 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background-image: url('/organic-pattern.png');
+    background-size: 400px;
+    background-repeat: repeat;
+    background-blend-mode: soft-light;
+    background-attachment: fixed;
   }
 }
