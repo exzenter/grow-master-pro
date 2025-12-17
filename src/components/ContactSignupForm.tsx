@@ -4,8 +4,23 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Mail, User, MessageSquare, Percent } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { CheckCircle2, Mail, User, MessageSquare, Percent, Building2, Package } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
+const customerTypes = [
+  { value: "privat", label: "Privat" },
+  { value: "gewerblich", label: "Gewerblich" },
+];
+
+const quantityOptions = [
+  { value: "1-5", label: "1-5 Säcke (40L)" },
+  { value: "1-palette", label: "1 Palette (54 Säcke)" },
+  { value: "4-paletten", label: "4 Paletten" },
+  { value: "12-paletten", label: "12 Paletten" },
+  { value: "lkw", label: "Voller LKW (26 Paletten)" },
+  { value: "mehr", label: "Mehr als 1 LKW" },
+];
 
 const ContactSignupForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -13,19 +28,42 @@ const ContactSignupForm = () => {
     name: "",
     email: "",
     phone: "",
+    customerType: "",
+    quantity: "",
     message: "",
   });
   const { toast } = useToast();
 
+  const getPrefilledMessage = () => {
+    const customerLabel = customerTypes.find(c => c.value === formData.customerType)?.label || "";
+    const quantityLabel = quantityOptions.find(q => q.value === formData.quantity)?.label || "";
+    
+    let prefilledText = `Ich bin ein ${customerLabel}kunde und interessiere mich für Ihr Premium-Substrat.\n\n`;
+    prefilledText += `Gewünschte Menge: ${quantityLabel}\n\n`;
+    
+    if (formData.customerType === "gewerblich") {
+      prefilledText += "Als Gewerbetreibender interessiere ich mich für Ihre B2B-Konditionen.\n\n";
+    }
+    
+    if (formData.message) {
+      prefilledText += `Zusätzliche Nachricht:\n${formData.message}\n\n`;
+    }
+    
+    return prefilledText;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const subject = encodeURIComponent("Kontaktanfrage über premium-erde.de");
+    const subject = encodeURIComponent(`Kontaktanfrage (${customerTypes.find(c => c.value === formData.customerType)?.label || ""})`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\n` +
       `E-Mail: ${formData.email}\n` +
-      `Telefon: ${formData.phone || "Nicht angegeben"}\n\n` +
-      `Nachricht:\n${formData.message || "Keine Nachricht"}`
+      `Telefon: ${formData.phone || "Nicht angegeben"}\n` +
+      `Kundentyp: ${customerTypes.find(c => c.value === formData.customerType)?.label || ""}\n` +
+      `Interessierte Menge: ${quantityOptions.find(q => q.value === formData.quantity)?.label || ""}\n\n` +
+      `---\n\n` +
+      getPrefilledMessage()
     );
     
     window.location.href = `mailto:info@premium-erde.de?subject=${subject}&body=${body}`;
@@ -43,6 +81,14 @@ const ContactSignupForm = () => {
       [e.target.name]: e.target.value
     }));
   };
+
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
 
   if (isSubmitted) {
     return (
@@ -108,6 +154,45 @@ const ContactSignupForm = () => {
           </div>
         </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label className="flex items-center gap-2">
+              <Building2 className="h-4 w-4" />
+              Kundentyp *
+            </Label>
+            <Select value={formData.customerType} onValueChange={(value) => handleSelectChange("customerType", value)} required>
+              <SelectTrigger className="bg-background/50">
+                <SelectValue placeholder="Bitte wählen..." />
+              </SelectTrigger>
+              <SelectContent className="bg-background border">
+                {customerTypes.map((type) => (
+                  <SelectItem key={type.value} value={type.value}>
+                    {type.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="space-y-2">
+            <Label className="flex items-center gap-2">
+              <Package className="h-4 w-4" />
+              Interessierte Menge *
+            </Label>
+            <Select value={formData.quantity} onValueChange={(value) => handleSelectChange("quantity", value)} required>
+              <SelectTrigger className="bg-background/50">
+                <SelectValue placeholder="Bitte wählen..." />
+              </SelectTrigger>
+              <SelectContent className="bg-background border">
+                {quantityOptions.map((option) => (
+                  <SelectItem key={option.value} value={option.value}>
+                    {option.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+
         <div className="space-y-2">
           <Label htmlFor="phone">Telefon (optional)</Label>
           <Input
@@ -131,7 +216,7 @@ const ContactSignupForm = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Ihre Fragen oder gewünschte Menge..."
+            placeholder="Weitere Fragen oder Anmerkungen..."
             rows={3}
             className="bg-background/50"
           />
