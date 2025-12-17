@@ -188,6 +188,9 @@ const GrowthReports = () => {
                 <p className="text-muted-foreground italic">
                   Ich bin stolz, diese Erde nun offiziell vertreten und vertreiben zu dürfen – als Produkt, das meine eigene Leidenschaft mit echtem Mehrwert für andere verbindet.
                 </p>
+                <p className="text-xs text-muted-foreground mt-4">
+                  Anmerkung: Herr Rommel, der Inhaber des Werkes NeulandHum, ist ein Freund von mir. Ich war derjenige, der die Erde als erster testen durfte – und habe bis heute mehr Erfahrung mit diesem Substrat gesammelt als jeder andere.
+                </p>
               </div>
             </Card>
           </div>
