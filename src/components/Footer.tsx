@@ -36,11 +36,6 @@ const Footer = () => {
                   Wachstumsberichte
                 </Link>
               </li>
-              <li>
-                <Link to="/erfahrungen" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Erfahrungen
-                </Link>
-              </li>
             </ul>
           </div>
           
