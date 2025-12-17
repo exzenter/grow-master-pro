@@ -69,9 +69,9 @@ const Index = () => {
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <Droplets className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Perfekte Drainage</h3>
+              <h3 className="text-xl font-bold mb-2">Perfekte Inhaltsstoffe</h3>
               <p className="text-muted-foreground">
-                Ausgewogene Wasser- und Luftzirkulation verhindert Staunässe und Wurzelfäule
+                Unsere torfbasierte Rezeptur übertrifft herkömmliche Erden bei weitem – maximale Nährstoffversorgung für Ihre Pflanzen
               </p>
             </Card>
             
