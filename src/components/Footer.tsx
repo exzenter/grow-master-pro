@@ -11,7 +11,7 @@ const Footer = () => {
               <div className="p-2 rounded-lg bg-gradient-primary shadow-glow">
                 <Leaf className="h-5 w-5 text-primary-foreground" />
               </div>
-              <span className="font-bold text-lg">GrowSubstrate</span>
+              <span className="font-bold text-lg">Premium Erde</span>
             </div>
             <p className="text-muted-foreground text-sm max-w-md">
               Hochwertiges Wachstumssubstrat für Cannabis-Pflanzen. Alles was Ihre Pflanzen für optimales Wachstum benötigen.
@@ -67,7 +67,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} GrowSubstrate. Alle Rechte vorbehalten.
+          © {new Date().getFullYear()} Premium Erde. Alle Rechte vorbehalten.
         </div>
       </div>
     </footer>
