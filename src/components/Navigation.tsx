@@ -43,14 +43,6 @@ const Navigation = () => {
             >
               Wachstumsberichte
             </Link>
-            <Link 
-              to="/erfahrungen" 
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive('/erfahrungen') ? 'text-primary' : 'text-foreground'
-              }`}
-            >
-              Erfahrungen
-            </Link>
             <Button asChild className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
               <Link to="/kontakt">Kontakt</Link>
             </Button>
