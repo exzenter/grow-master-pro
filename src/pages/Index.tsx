@@ -59,9 +59,9 @@ const Index = () => {
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <Sprout className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Optimale Nährstoffe</h3>
+              <h3 className="text-xl font-bold mb-2">6 Monate ohne Nachdüngen</h3>
               <p className="text-muted-foreground">
-                Perfekt abgestimmte Nährstoffzusammensetzung für jede Wachstumsphase
+                Perfekt abgestimmte Langzeitnährstoffe versorgen Ihre Pflanzen bis zu 6 Monate
               </p>
             </Card>
             

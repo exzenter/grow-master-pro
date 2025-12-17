@@ -21,7 +21,7 @@ const Testimonials = () => {
       location: "München",
       rating: 5,
       date: "Februar 2024",
-      text: "Ich bin Anfängerin im Cannabis-Anbau und war anfangs überfordert mit all den verschiedenen Produkten. Dieses Substrat hat es mir unglaublich einfach gemacht - keine komplizierte Düngung nötig, perfekte pH-Werte von Anfang an. Meine ersten Pflanzen waren ein voller Erfolg!",
+      text: "Ich bin Anfängerin im Cannabis-Anbau und war anfangs überfordert mit all den verschiedenen Produkten. Dieses Substrat hat es mir unglaublich einfach gemacht - bis zu 6 Monate kein Nachdüngen nötig, perfekte pH-Werte von Anfang an. Meine ersten Pflanzen waren ein voller Erfolg!",
       initials: "AK"
     },
     {
@@ -57,7 +57,7 @@ const Testimonials = () => {
       location: "Stuttgart",
       rating: 5,
       date: "Dezember 2023",
-      text: "Was mich am meisten überzeugt hat, ist die Langzeitwirkung der Nährstoffe. Ich musste erst nach 5 Wochen das erste Mal zusätzlich düngen - bei anderen Substraten war das nach 2-3 Wochen nötig. Das spart Zeit, Geld und vereinfacht den gesamten Anbauprozess enorm.",
+      text: "Was mich am meisten überzeugt hat, ist die Langzeitwirkung der Nährstoffe. Ich musste bis zu 6 Monate lang überhaupt nicht nachdüngen - bei anderen Substraten war das nach wenigen Wochen nötig. Das spart Zeit, Geld und vereinfacht den gesamten Anbauprozess enorm.",
       initials: "JM"
     }
   ];

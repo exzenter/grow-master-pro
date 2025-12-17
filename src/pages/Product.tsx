@@ -229,7 +229,7 @@ const Product = () => {
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
-                      <span>Ausreichend für 4-6 Wochen ohne Düngung</span>
+                      <span>Kein Nachdüngen für bis zu 6 Monate</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
@@ -251,8 +251,8 @@ const Product = () => {
                   description: "Verhindert Staunässe und fördert gesundes Wurzelwachstum durch optimale Wasserdurchlässigkeit"
                 },
                 {
-                  title: "Langzeitnährstoffe",
-                  description: "Versorgt Pflanzen über den gesamten Wachstumszyklus mit allen wichtigen Makro- und Mikronährstoffen"
+                  title: "Kein Nachdüngen für 6 Monate",
+                  description: "Versorgt Pflanzen bis zu 6 Monate lang mit allen wichtigen Makro- und Mikronährstoffen - kein Nachdüngen nötig"
                 },
                 {
                   title: "pH-Stabilität",
@@ -310,7 +310,7 @@ const Product = () => {
                   </div>
                   <h3 className="font-bold mb-2">Pflege</h3>
                   <p className="text-muted-foreground text-sm">
-                    Regelmäßig gießen wenn oberste Schicht trocken ist. Keine zusätzliche Düngung für 4-6 Wochen nötig.
+                    Regelmäßig gießen wenn oberste Schicht trocken ist. Kein Nachdüngen für bis zu 6 Monate nötig.
                   </p>
                 </div>
               </div>
