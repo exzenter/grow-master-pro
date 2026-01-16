@@ -7,39 +7,68 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import productPackshot from "@/assets/product-packshot.png";
 import { useState } from "react";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 const Product = () => {
   const [showBulkShipping, setShowBulkShipping] = useState(false);
-
-  const lkwPrices = [
-    { city: "München", price: "650€" },
-    { city: "Frankfurt", price: "500€" },
-    { city: "Hamburg", price: "1.250€" },
-    { city: "Köln", price: "900€" },
-    { city: "Berlin", price: "900€" },
-    { city: "Leipzig", price: "750€" },
-    { city: "Linz", price: "900€" },
-    { city: "Salzburg", price: "900€" },
-    { city: "Wien", price: "1.300€" },
-    { city: "Innsbruck", price: "950€" },
-    { city: "Bozen", price: "1.100€" },
-    { city: "Mailand", price: "1.600€" },
-    { city: "Turin", price: "1.800€" },
-    { city: "Rom", price: "2.500€" },
-    { city: "Metz", price: "1.000€" },
-    { city: "Straßburg", price: "750€" },
-    { city: "Prag", price: "800€" },
-    { city: "Pilsen", price: "600€" },
-    { city: "Karlsbad", price: "550€" },
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const lkwPrices = [{
+    city: "München",
+    price: "650€"
+  }, {
+    city: "Frankfurt",
+    price: "500€"
+  }, {
+    city: "Hamburg",
+    price: "1.250€"
+  }, {
+    city: "Köln",
+    price: "900€"
+  }, {
+    city: "Berlin",
+    price: "900€"
+  }, {
+    city: "Leipzig",
+    price: "750€"
+  }, {
+    city: "Linz",
+    price: "900€"
+  }, {
+    city: "Salzburg",
+    price: "900€"
+  }, {
+    city: "Wien",
+    price: "1.300€"
+  }, {
+    city: "Innsbruck",
+    price: "950€"
+  }, {
+    city: "Bozen",
+    price: "1.100€"
+  }, {
+    city: "Mailand",
+    price: "1.600€"
+  }, {
+    city: "Turin",
+    price: "1.800€"
+  }, {
+    city: "Rom",
+    price: "2.500€"
+  }, {
+    city: "Metz",
+    price: "1.000€"
+  }, {
+    city: "Straßburg",
+    price: "750€"
+  }, {
+    city: "Prag",
+    price: "800€"
+  }, {
+    city: "Pilsen",
+    price: "600€"
+  }, {
+    city: "Karlsbad",
+    price: "550€"
+  }];
+  return <div className="min-h-screen">
       <Navigation />
       
       <div className="pt-24 pb-20">
@@ -47,11 +76,7 @@ const Product = () => {
           {/* Product Header */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
             <div className="flex justify-center items-center bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8">
-              <img 
-                src={productPackshot} 
-                alt="Highland Hum - The Dope Mix 40L Sack" 
-                className="max-h-[500px] w-auto drop-shadow-2xl"
-              />
+              <img src={productPackshot} alt="Highland Hum - The Dope Mix 40L Sack" className="max-h-[500px] w-auto drop-shadow-2xl" />
             </div>
             
             <div className="flex flex-col justify-center">
@@ -139,7 +164,7 @@ const Product = () => {
               <div className="space-y-4">
                 <div className="p-4 bg-muted/50 rounded-lg">
                   <p className="font-medium mb-1">Stückgutversand Innerdeutsch</p>
-                  <p className="text-xl font-bold text-primary">95€ / Palette</p>
+                  <p className="text-xl font-bold text-primary">120€ / Palette</p>
                 </div>
                 
                 <p className="text-sm text-muted-foreground">
@@ -161,12 +186,10 @@ const Product = () => {
                       </p>
                       
                       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                        {lkwPrices.map((item) => (
-                          <div key={item.city} className="p-2 bg-background rounded border border-border/50">
+                        {lkwPrices.map(item => <div key={item.city} className="p-2 bg-background rounded border border-border/50">
                             <p className="text-xs text-muted-foreground">{item.city}</p>
                             <p className="font-semibold text-primary">{item.price}</p>
-                          </div>
-                        ))}
+                          </div>)}
                       </div>
                       
                       <div className="mt-4 p-3 bg-accent/10 rounded-lg">
@@ -245,37 +268,28 @@ const Product = () => {
           <section className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">Produktmerkmale</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Perfekte Drainage",
-                  description: "Verhindert Staunässe und fördert gesundes Wurzelwachstum durch optimale Wasserdurchlässigkeit"
-                },
-                {
-                  title: "Kein Nachdüngen für 6 Monate",
-                  description: "Versorgt Pflanzen bis zu 6 Monate lang mit allen wichtigen Makro- und Mikronährstoffen - kein Nachdüngen nötig"
-                },
-                {
-                  title: "pH-Stabilität",
-                  description: "Puffersystem hält den pH-Wert konstant im optimalen Bereich für maximale Nährstoffaufnahme"
-                },
-                {
-                  title: "Biologisch abbaubar",
-                  description: "Umweltfreundliche Komponenten aus nachhaltiger Produktion"
-                },
-                {
-                  title: "Luftige Struktur",
-                  description: "Hervorragende Belüftung der Wurzeln fördert Sauerstoffaufnahme und Mikrobenaktivität"
-                },
-                {
-                  title: "Einfache Anwendung",
-                  description: "Gebrauchsfertig - kein Mischen oder Vordüngen erforderlich"
-                }
-              ].map((feature, index) => (
-                <Card key={index} className="p-6 hover:shadow-elevated transition-all duration-300">
+              {[{
+              title: "Perfekte Drainage",
+              description: "Verhindert Staunässe und fördert gesundes Wurzelwachstum durch optimale Wasserdurchlässigkeit"
+            }, {
+              title: "Kein Nachdüngen für 6 Monate",
+              description: "Versorgt Pflanzen bis zu 6 Monate lang mit allen wichtigen Makro- und Mikronährstoffen - kein Nachdüngen nötig"
+            }, {
+              title: "pH-Stabilität",
+              description: "Puffersystem hält den pH-Wert konstant im optimalen Bereich für maximale Nährstoffaufnahme"
+            }, {
+              title: "Biologisch abbaubar",
+              description: "Umweltfreundliche Komponenten aus nachhaltiger Produktion"
+            }, {
+              title: "Luftige Struktur",
+              description: "Hervorragende Belüftung der Wurzeln fördert Sauerstoffaufnahme und Mikrobenaktivität"
+            }, {
+              title: "Einfache Anwendung",
+              description: "Gebrauchsfertig - kein Mischen oder Vordüngen erforderlich"
+            }].map((feature, index) => <Card key={index} className="p-6 hover:shadow-elevated transition-all duration-300">
                   <h3 className="font-bold mb-2">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground">{feature.description}</p>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </section>
           
@@ -336,8 +350,6 @@ const Product = () => {
       </div>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Product;
