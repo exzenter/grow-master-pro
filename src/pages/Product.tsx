@@ -367,6 +367,45 @@ const Product = () => {
             </Card>
           </section>
           
+          {/* Why Order Through Us */}
+          <section className="mb-20">
+            <Card className="p-8 border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-accent/10">
+              <h2 className="text-2xl font-bold mb-6 text-center">Warum über uns bestellen?</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold mb-1">Persönliche Beratung vom Experten</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Bei Fragen zur Anwendung, Dosierung oder Pflege bin ich Ihr direkter Ansprechpartner. 
+                      Da ich das Produkt seit der Entwicklungsphase begleite und selbst ausgiebig getestet habe, 
+                      kann ich Ihnen aus erster Hand weiterhelfen.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <Package className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold mb-1">Bis zu 10% Rabatt sichern</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Als direkter Partner von NeulandHum kann ich Ihnen exklusive Konditionen anbieten – 
+                      sowohl für Privatkunden als auch für Händler und Gewerbetreibende.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
+                  <Link to="/kontakt">Jetzt Kontakt aufnehmen</Link>
+                </Button>
+              </div>
+            </Card>
+          </section>
+
           {/* CTA */}
           <section className="text-center">
             <Card className="p-12 bg-gradient-primary border-0">
