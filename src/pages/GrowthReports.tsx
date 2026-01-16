@@ -3,10 +3,8 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, TrendingUp, Award, Users } from "lucide-react";
-
 const GrowthReports = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       
       <div className="pt-24 pb-20">
@@ -19,9 +17,7 @@ const GrowthReports = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Cannabis-Erde von NeulandHum
             </h1>
-            <p className="text-xl text-muted-foreground">
-              Ein ausführlicher Praxisbericht über langjährige Erfahrungen als professioneller Grower
-            </p>
+            <p className="text-xl text-muted-foreground">Ein ausführlicher Praxisbericht über langjährige Erfahrungen </p>
           </div>
           
           {/* Main Report */}
@@ -195,8 +191,6 @@ const GrowthReports = () => {
       </div>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default GrowthReports;
