@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import productPackshot from "@/assets/product-packshot.png";
 import { useState } from "react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+
 const Product = () => {
   const [showBulkShipping, setShowBulkShipping] = useState(false);
   const lkwPrices = [{
@@ -68,7 +69,9 @@ const Product = () => {
     city: "Karlsbad",
     price: "550€"
   }];
-  return <div className="min-h-screen">
+
+  return (
+    <div className="min-h-screen">
       <Navigation />
       
       <div className="pt-24 pb-20">
@@ -99,7 +102,7 @@ const Product = () => {
               {/* B2C Price */}
               <div className="mb-6 p-4 bg-primary/5 rounded-xl border border-primary/20">
                 <p className="text-sm text-muted-foreground mb-1">Empfohlener Verkaufspreis (40L Sack)</p>
-                <p className="text-3xl font-bold text-primary">19,99€ </p>
+                <p className="text-3xl font-bold text-primary">19,99€ <span className="text-sm font-normal text-muted-foreground">zzgl. Versandkosten</span></p>
               </div>
               
               <div className="flex flex-wrap gap-4 mb-8">
@@ -186,10 +189,12 @@ const Product = () => {
                       </p>
                       
                       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                        {lkwPrices.map(item => <div key={item.city} className="p-2 bg-background rounded border border-border/50">
+                        {lkwPrices.map(item => (
+                          <div key={item.city} className="p-2 bg-background rounded border border-border/50">
                             <p className="text-xs text-muted-foreground">{item.city}</p>
                             <p className="font-semibold text-primary">{item.price}</p>
-                          </div>)}
+                          </div>
+                        ))}
                       </div>
                       
                       <div className="mt-4 p-3 bg-accent/10 rounded-lg">
@@ -269,27 +274,29 @@ const Product = () => {
             <h2 className="text-3xl font-bold mb-8 text-center">Produktmerkmale</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[{
-              title: "Perfekte Drainage",
-              description: "Verhindert Staunässe und fördert gesundes Wurzelwachstum durch optimale Wasserdurchlässigkeit"
-            }, {
-              title: "Kein Nachdüngen für 6 Monate",
-              description: "Versorgt Pflanzen bis zu 6 Monate lang mit allen wichtigen Makro- und Mikronährstoffen - kein Nachdüngen nötig"
-            }, {
-              title: "pH-Stabilität",
-              description: "Puffersystem hält den pH-Wert konstant im optimalen Bereich für maximale Nährstoffaufnahme"
-            }, {
-              title: "Biologisch abbaubar",
-              description: "Umweltfreundliche Komponenten aus nachhaltiger Produktion"
-            }, {
-              title: "Luftige Struktur",
-              description: "Hervorragende Belüftung der Wurzeln fördert Sauerstoffaufnahme und Mikrobenaktivität"
-            }, {
-              title: "Einfache Anwendung",
-              description: "Gebrauchsfertig - kein Mischen oder Vordüngen erforderlich"
-            }].map((feature, index) => <Card key={index} className="p-6 hover:shadow-elevated transition-all duration-300">
+                title: "Perfekte Drainage",
+                description: "Verhindert Staunässe und fördert gesundes Wurzelwachstum durch optimale Wasserdurchlässigkeit"
+              }, {
+                title: "Kein Nachdüngen für 6 Monate",
+                description: "Versorgt Pflanzen bis zu 6 Monate lang mit allen wichtigen Makro- und Mikronährstoffen - kein Nachdüngen nötig"
+              }, {
+                title: "pH-Stabilität",
+                description: "Puffersystem hält den pH-Wert konstant im optimalen Bereich für maximale Nährstoffaufnahme"
+              }, {
+                title: "Biologisch abbaubar",
+                description: "Umweltfreundliche Komponenten aus nachhaltiger Produktion"
+              }, {
+                title: "Luftige Struktur",
+                description: "Hervorragende Belüftung der Wurzeln fördert Sauerstoffaufnahme und Mikrobenaktivität"
+              }, {
+                title: "Einfache Anwendung",
+                description: "Gebrauchsfertig - kein Mischen oder Vordüngen erforderlich"
+              }].map((feature, index) => (
+                <Card key={index} className="p-6 hover:shadow-elevated transition-all duration-300">
                   <h3 className="font-bold mb-2">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground">{feature.description}</p>
-                </Card>)}
+                </Card>
+              ))}
             </div>
           </section>
           
@@ -350,6 +357,8 @@ const Product = () => {
       </div>
       
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Product;
