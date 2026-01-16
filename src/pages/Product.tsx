@@ -95,8 +95,11 @@ const Product = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Premium Cannabis Wachstumssubstrat
               </h1>
-              <p className="text-xl text-muted-foreground mb-6">
-                Unser hochwertiges Substrat wurde speziell für den Anbau von Cannabis entwickelt und bietet die perfekte Balance aus Nährstoffen, Drainage und Luftzirkulation.
+              <p className="text-xl text-muted-foreground mb-4">
+                Einfach einpflanzen und wachsen lassen – unsere durchdachte Nährstoffkombination versorgt Ihre Pflanze vom ersten Tag bis zur Ernte. Kein Nachdüngen, kein Stress.
+              </p>
+              <p className="text-base text-muted-foreground mb-6">
+                <span className="font-medium text-foreground">Anfänger</span> genießen maximale Erträge ohne Vorkenntnisse. <span className="font-medium text-foreground">Profis</span> erhalten eine hervorragende Grundlage, die bei Bedarf individuell ergänzt werden kann.
               </p>
               
               {/* B2C Price */}
@@ -108,15 +111,15 @@ const Product = () => {
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-2 bg-primary/5 px-3 py-1.5 rounded-full">
                   <CheckCircle2 className="h-5 w-5 text-primary" />
-                  <span className="text-sm font-medium">Kompletter Lebenszyklus</span>
+                  <span className="text-sm font-medium">Rundum-Versorgung</span>
                 </div>
                 <div className="flex items-center gap-2 bg-primary/5 px-3 py-1.5 rounded-full">
                   <CheckCircle2 className="h-5 w-5 text-primary" />
-                  <span className="text-sm font-medium">Bio-zertifiziert</span>
+                  <span className="text-sm font-medium">Kein Nachdüngen nötig</span>
                 </div>
                 <div className="flex items-center gap-2 bg-primary/5 px-3 py-1.5 rounded-full">
                   <CheckCircle2 className="h-5 w-5 text-primary" />
-                  <span className="text-sm font-medium">Laborgeprüft</span>
+                  <span className="text-sm font-medium">Plug & Play</span>
                 </div>
               </div>
               
@@ -271,26 +274,29 @@ const Product = () => {
           
           {/* Features Grid */}
           <section className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Produktmerkmale</h2>
+            <h2 className="text-3xl font-bold mb-4 text-center">Produktmerkmale</h2>
+            <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Für Anfänger: Einfach einpflanzen und entspannen. Für Profis: Die perfekte Basis, die bei Bedarf individuell ergänzt werden kann.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[{
+                title: "Rundum-sorglos-Paket",
+                description: "Die durchdachte Nährstoffkombination versorgt Ihre Pflanze automatisch – vom Keimling bis zur Ernte, ohne Ihr Zutun"
+              }, {
+                title: "Kein Nachdüngen nötig",
+                description: "Bis zu 6 Monate optimale Versorgung. Wer möchte, kann natürlich zusätzlich düngen – muss aber nicht"
+              }, {
                 title: "Perfekte Drainage",
                 description: "Verhindert Staunässe und fördert gesundes Wurzelwachstum durch optimale Wasserdurchlässigkeit"
               }, {
-                title: "Kein Nachdüngen für 6 Monate",
-                description: "Versorgt Pflanzen bis zu 6 Monate lang mit allen wichtigen Makro- und Mikronährstoffen - kein Nachdüngen nötig"
-              }, {
                 title: "pH-Stabilität",
-                description: "Puffersystem hält den pH-Wert konstant im optimalen Bereich für maximale Nährstoffaufnahme"
+                description: "Puffersystem hält den pH-Wert konstant im optimalen Bereich – kein Messen, kein Korrigieren"
               }, {
-                title: "Biologisch abbaubar",
-                description: "Umweltfreundliche Komponenten aus nachhaltiger Produktion"
+                title: "Anfängerfreundlich",
+                description: "Kein Fachwissen erforderlich. Maximale Erträge ohne Bücher zu wälzen oder Dosierungen zu berechnen"
               }, {
-                title: "Luftige Struktur",
-                description: "Hervorragende Belüftung der Wurzeln fördert Sauerstoffaufnahme und Mikrobenaktivität"
-              }, {
-                title: "Einfache Anwendung",
-                description: "Gebrauchsfertig - kein Mischen oder Vordüngen erforderlich"
+                title: "Profi-Grundlage",
+                description: "Hervorragender Ausgangspunkt für erfahrene Grower, die ihre eigenen Ergänzungen hinzufügen möchten"
               }].map((feature, index) => (
                 <Card key={index} className="p-6 hover:shadow-elevated transition-all duration-300">
                   <h3 className="font-bold mb-2">{feature.title}</h3>
