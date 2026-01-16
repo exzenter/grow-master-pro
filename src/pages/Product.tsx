@@ -311,7 +311,7 @@ const Product = () => {
                   </div>
                   <h3 className="font-bold mb-2">Vorbereitung</h3>
                   <p className="text-muted-foreground text-sm">
-                    Substrat vor Gebrauch leicht anfeuchten und auflockern. Töpfe zu 2/3 füllen.
+                    Substrat vor Gebrauch leicht anfeuchten und auflockern. Töpfe zu 4/5 füllen.
                   </p>
                 </div>
                 
