@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2, Sprout, Droplets, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-cannabis.jpg";
+import productPackshot from "@/assets/product-packshot.png";
 
 const Index = () => {
   return (
@@ -24,24 +25,33 @@ const Index = () => {
         />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Premium Wachstums-substrat für Cannabis
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-              Alles was Ihre Pflanzen für optimales Wachstum benötigen - von der Keimung bis zur Ernte
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/produkt">
-                <Button size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
-                  Produkt entdecken
-                </Button>
-              </Link>
-              <Link to="/wachstumsberichte">
-                <Button size="lg" variant="outline">
-                  Wachstumsberichte ansehen
-                </Button>
-              </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-2xl">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Premium Wachstums-substrat für Cannabis
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+                Alles was Ihre Pflanzen für optimales Wachstum benötigen - von der Keimung bis zur Ernte
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/produkt">
+                  <Button size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
+                    Produkt entdecken
+                  </Button>
+                </Link>
+                <Link to="/wachstumsberichte">
+                  <Button size="lg" variant="outline">
+                    Wachstumsberichte ansehen
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="hidden lg:flex justify-center">
+              <img 
+                src={productPackshot} 
+                alt="Highland Hum - The Dope Mix 40L Sack" 
+                className="max-h-[500px] w-auto drop-shadow-2xl"
+              />
             </div>
           </div>
         </div>
@@ -116,11 +126,11 @@ const Index = () => {
               </ul>
             </div>
             
-            <div className="relative">
+            <div className="relative flex justify-center items-center bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8">
               <img 
-                src={heroImage} 
-                alt="Cannabis Pflanzen in Premium Substrat" 
-                className="rounded-lg shadow-elevated"
+                src={productPackshot} 
+                alt="Highland Hum - The Dope Mix 40L Sack" 
+                className="max-h-[450px] w-auto drop-shadow-2xl"
               />
             </div>
           </div>

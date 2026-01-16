@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Package, Leaf, BarChart3, Truck, Calendar, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-substrate-focus.jpg";
+import productPackshot from "@/assets/product-packshot.png";
 import { useState } from "react";
 import {
   Collapsible,
@@ -46,11 +46,11 @@ const Product = () => {
         <div className="container mx-auto px-4">
           {/* Product Header */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-            <div>
+            <div className="flex justify-center items-center bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8">
               <img 
-                src={heroImage} 
-                alt="Premium Cannabis Wachstumssubstrat mit reichhaltiger Erde" 
-                className="rounded-2xl shadow-2xl w-full border-4 border-primary/20"
+                src={productPackshot} 
+                alt="Highland Hum - The Dope Mix 40L Sack" 
+                className="max-h-[500px] w-auto drop-shadow-2xl"
               />
             </div>
             
