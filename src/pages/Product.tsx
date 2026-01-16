@@ -338,6 +338,35 @@ const Product = () => {
             </Card>
           </section>
           
+          {/* Manufacturer Comment */}
+          <section className="mb-20">
+            <Card className="p-8 bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <Leaf className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-1">Ein Kommentar vom Hersteller</h3>
+                  <p className="text-sm text-muted-foreground">NeulandHum GmbH</p>
+                </div>
+              </div>
+              <blockquote className="text-muted-foreground leading-relaxed space-y-4 italic border-l-4 border-primary/30 pl-6">
+                <p>
+                  Ich wollte eine Erde entwickeln, die es jedem ermöglicht Cannabis zuhause anzubauen. Einfach und trotzdem mit maximalen Erträgen. Da wir seit Jahrzehnten viele professionelle Gartenbaubetriebe beliefern, wussten wir genau worauf es ankommt. Optimale Nährstoffversorgung, beste Bedingungen für eine gute Bewurzlung, und einem idealen Wasserhaushalt bestehend aus einem hervorragend Wasserspeicher in Kombination mit einer ausreichenden Drainage um Staunässe zu vermeiden. Und das alles mit möglichst keinem Eintrag von Schädlingen in die Kultur.
+                </p>
+                <p>
+                  Da sich der Privatverbraucher oft nicht mit Düngern und der dazugehörigen Dosierung auskennt, war es klar, dass dies die Erde selbst liefern muss. Da bei einer solchen Kurzzeitkultur wie Cannabis alles auf den Punkt passen muss, um am Ende das optimale Ergebniss und Ernte zu erzielen. Zusammen mit unserem QM Team haben wir ein Düngerkonzept entwickelt was der Cannabispflanze zu jederzeit die nötigen Nährstoffe zur Verfügung stellt.
+                </p>
+                <p>
+                  Das Besondere, egal in welchem Stadium die Pflanze ist, sie wird optimal versorgt. Das ermöglicht uns eine Kombination aus Düngern die gleichzeitig eine optimale Nährstoffverfügbarkeit als auch die optimale Menge an Nährstoffen zur Verfügung stellt. Und das Ganze temperaturunabhängig, da wir keine konventionellen Landgzeitdünger verwenden die stark auf Hitze reagieren. Pilzkulturen zur Stärkung der Wurzeln und Widerstandsfähigkeit vor Krankheiten sind natürlich auch dabei. Somit wird auch sichergestellt, dass wir den Salzgehalt in der Erde nicht zu stark erhöhen. Somit fühlen sich auch Stecklinge in der Erde pudelwohl.
+                </p>
+                <p className="font-semibold not-italic text-foreground">
+                  Einfach gesagt, ein Produkt entwickelt mit höchsten Qualitätsstandards für den Gartenbau, welches dem privaten Hobbygärtner mit minimalem Aufwand einen maximalen Ertrag sichert ohne Bücher über den Anbau von Cannabis zu wälzen. Plug in Play in seiner reinsten Form.
+                </p>
+              </blockquote>
+            </Card>
+          </section>
+          
           {/* CTA */}
           <section className="text-center">
             <Card className="p-12 bg-gradient-primary border-0">
