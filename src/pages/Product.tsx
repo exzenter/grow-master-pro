@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, Package, Leaf, BarChart3, Truck, Calendar, ChevronDown } from "lucide-react";
+import { CheckCircle2, Package, Leaf, BarChart3, Truck, Calendar, ChevronDown, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import productPackshot from "@/assets/product-packshot.png";
@@ -425,6 +425,66 @@ const Product = () => {
               <Button asChild size="lg" variant="secondary">
                 <Link to="/wachstumsberichte">Zu den Wachstumsberichten</Link>
               </Button>
+            </Card>
+          </section>
+
+          {/* Technische Deklaration */}
+          <section className="mt-16">
+            <Card className="p-6 bg-muted/30 border-border/50">
+              <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                <FileText className="h-5 w-5 text-primary" />
+                Technische Deklaration nach DüMV 2012
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6 text-sm">
+                {/* Kultursubstrat */}
+                <div>
+                  <h4 className="font-semibold text-primary mb-2">Kultursubstrat</h4>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    Unter Verwendung von organischem Bodenmaterial, Ton, Perlite, tierischen 
+                    Nebenprodukten Kat. 3 nach VO (EG) Nr. 1069/2009 (Schafwolle), Düngemitteln, 
+                    Lebende Mikroorganismen (Endomykorrhizapilz).
+                  </p>
+                  <div className="mt-3 space-y-1 text-xs text-muted-foreground">
+                    <p>Organische Substanz: 15%</p>
+                    <p>pH-Wert: 5,6 (CaCl₂)</p>
+                    <p>Salzgehalt: 1,6 g KCl/l</p>
+                    <p>Volumen: 40 Liter</p>
+                  </div>
+                </div>
+
+                {/* Ausgangsstoffe */}
+                <div>
+                  <h4 className="font-semibold text-primary mb-2">Ausgangsstoffe</h4>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    Organisches Bodenmaterial (Hochmoortorf wenig bis stärker zersetzt, H2−H6), 
+                    Ton (Blähton, Tongranulat), Perlite, Lebende Mikroorganismen (Endomykorrhizapilz), 
+                    tierischen Nebenprodukten Kat. 3 nach VO (EG) Nr. 1069/2009 (Schafwolle), 
+                    NPK-Dünger, Spurennährstoff-Mischdünger
+                  </p>
+                </div>
+
+                {/* Nebenbestandteile */}
+                <div>
+                  <h4 className="font-semibold text-primary mb-2">Nebenbestandteile</h4>
+                  <div className="text-xs text-muted-foreground space-y-1">
+                    <p>Stickstoff (N): 200 mg/l CaCl₂</p>
+                    <p>Phosphat (P₂O₅): 180 mg/l CAL</p>
+                    <p>Kaliumoxid (K₂O): 300 mg/l CAL</p>
+                    <p>Magnesium (Mg): 120 mg/l CaCl₂</p>
+                  </div>
+                </div>
+
+                {/* Inverkehrbringer */}
+                <div>
+                  <h4 className="font-semibold text-primary mb-2">Inverkehrbringer</h4>
+                  <div className="text-xs text-muted-foreground">
+                    <p>Neuland-Hum Rommel GmbH & Co.KG</p>
+                    <p>Steigerwaldstraße 31</p>
+                    <p>D-96193 Wachenroth</p>
+                    <p className="mt-1">info@neulandhum.de</p>
+                  </div>
+                </div>
+              </div>
             </Card>
           </section>
         </div>
