@@ -22,7 +22,7 @@ const Contact = () => {
             <div className="flex items-center gap-3 mb-6 p-4 bg-primary/10 rounded-lg border border-primary/20">
               <Gift className="h-6 w-6 text-primary flex-shrink-0" />
               <p className="text-sm font-medium">
-                <span className="text-primary font-bold">10% Rabatt</span> auf Ihre erste Bestellung wenn Sie uns über dieses Formular kontaktieren!
+                <span className="text-primary font-bold">Bis zu 10% Rabatt</span> auf jede Bestellung, die über mich abgewickelt wird!
               </p>
             </div>
             
