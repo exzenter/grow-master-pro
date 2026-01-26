@@ -105,7 +105,7 @@ const Product = () => {
               {/* B2C Price */}
               <div className="mb-6 p-4 bg-primary/5 rounded-xl border border-primary/20">
                 <p className="text-sm text-muted-foreground mb-1">Empfohlener Verkaufspreis (40L Sack)</p>
-                <p className="text-3xl font-bold text-primary">19,99€ <span className="text-sm font-normal text-muted-foreground">zzgl. Versandkosten</span></p>
+                <p className="text-3xl font-bold text-primary">24,99€ <span className="text-sm font-normal text-muted-foreground">zzgl. Versandkosten</span></p>
               </div>
               
               <div className="flex flex-wrap gap-4 mb-8">
