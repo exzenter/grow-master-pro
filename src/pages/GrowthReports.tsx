@@ -192,19 +192,24 @@ const GrowthReports = () => {
       </div>
       
       {/* USP Banner */}
-      <section className="py-6 bg-primary/10 border-y border-primary/20">
+      <section className="py-10 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 border-y-4 border-primary/40">
         <div className="container mx-auto px-4">
           <Link 
             to="/kontakt" 
-            className="flex items-center justify-center gap-3 text-center group"
+            className="flex flex-col md:flex-row items-center justify-center gap-4 text-center group"
           >
-            <span className="bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded">EXKLUSIV</span>
-            <span className="text-sm md:text-base font-medium group-hover:text-primary transition-colors">
-              Bis zu <span className="font-bold text-primary">10% Rabatt</span> bei Bestellung über uns – persönliche Beratung inklusive
+            <span className="bg-primary text-primary-foreground text-sm font-bold px-4 py-2 rounded-full shadow-lg animate-pulse">
+              ✨ EXKLUSIV ✨
             </span>
-            <svg className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            <span className="text-lg md:text-xl font-semibold group-hover:text-primary transition-colors">
+              Bis zu <span className="text-2xl md:text-3xl font-bold text-primary">10% Rabatt</span> bei Bestellung über uns
+            </span>
+            <span className="text-muted-foreground text-sm md:text-base">– persönliche Beratung inklusive</span>
+            <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+              <svg className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
           </Link>
         </div>
       </section>
