@@ -154,6 +154,27 @@ const Index = () => {
           </Link>
         </div>
       </section>
+
+      {/* Next Page Navigation */}
+      <section className="py-16 border-t border-border">
+        <div className="container mx-auto px-4">
+          <Link 
+            to="/produkt" 
+            className="group flex items-center justify-between p-6 rounded-xl bg-card hover:bg-primary/5 border border-border hover:border-primary/30 transition-all duration-300"
+          >
+            <div>
+              <p className="text-sm text-muted-foreground mb-1">Weiter zum</p>
+              <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">Produkt</h3>
+              <p className="text-muted-foreground mt-1">Erfahren Sie alles über unser Premium-Substrat</p>
+            </div>
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+              <svg className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </Link>
+        </div>
+      </section>
       
       <Footer />
     </div>
