@@ -109,20 +109,20 @@ const Product = () => {
               </div>
               
               {/* Discount USP Banner */}
-              <div className="mb-6 p-4 bg-gradient-to-r from-primary/15 via-primary/10 to-accent/15 rounded-xl border-2 border-primary/40 relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
-                  EXKLUSIV
+              <div className="mb-6 p-5 bg-gradient-to-r from-primary/20 via-primary/15 to-accent/20 rounded-xl border-4 border-primary relative overflow-hidden shadow-lg">
+                <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-bl-lg">
+                  ✨ EXKLUSIV
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-primary/20 rounded-full flex-shrink-0">
-                    <Gift className="h-6 w-6 text-primary" />
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-primary/30 rounded-full flex-shrink-0">
+                    <Gift className="h-7 w-7 text-primary" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg flex items-center gap-2">
-                      <Percent className="h-5 w-5 text-primary" />
+                    <p className="font-bold text-xl flex items-center gap-2">
+                      <Percent className="h-6 w-6 text-primary" />
                       Bis zu 10% Rabatt sichern!
                     </p>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-muted-foreground mt-1">
                       Bei jeder Bestellung über mich – je nach Bestellmenge. Persönliche Beratung vom Experten inklusive.
                     </p>
                   </div>
@@ -144,12 +144,14 @@ const Product = () => {
                 </div>
               </div>
               
-              <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 group">
-                <Link to="/kontakt" className="flex items-center gap-2">
-                  <Gift className="h-5 w-5 group-hover:animate-pulse" />
-                  Jetzt anfragen & bis zu 10% sparen
-                </Link>
-              </Button>
+              <div className="flex justify-center">
+                <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 group">
+                  <Link to="/kontakt" className="flex items-center gap-2">
+                    <Gift className="h-5 w-5 group-hover:animate-pulse" />
+                    Jetzt anfragen & bis zu 10% sparen
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
 
