@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, Package, Leaf, BarChart3, Truck, Calendar, ChevronDown, FileText } from "lucide-react";
+import { CheckCircle2, Package, Leaf, BarChart3, Truck, Calendar, ChevronDown, FileText, Percent, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import productPackshot from "@/assets/product-packshot.png";
@@ -103,9 +103,30 @@ const Product = () => {
               </p>
               
               {/* B2C Price */}
-              <div className="mb-6 p-4 bg-primary/5 rounded-xl border border-primary/20">
+              <div className="mb-4 p-4 bg-primary/5 rounded-xl border border-primary/20">
                 <p className="text-sm text-muted-foreground mb-1">Empfohlener Verkaufspreis (40L Sack)</p>
                 <p className="text-3xl font-bold text-primary">24,99€ <span className="text-sm font-normal text-muted-foreground">zzgl. Versandkosten</span></p>
+              </div>
+              
+              {/* Discount USP Banner */}
+              <div className="mb-6 p-4 bg-gradient-to-r from-primary/15 via-primary/10 to-accent/15 rounded-xl border-2 border-primary/40 relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
+                  EXKLUSIV
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-primary/20 rounded-full flex-shrink-0">
+                    <Gift className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg flex items-center gap-2">
+                      <Percent className="h-5 w-5 text-primary" />
+                      Bis zu 10% Rabatt sichern!
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Bei jeder Bestellung über mich – je nach Bestellmenge. Persönliche Beratung vom Experten inklusive.
+                    </p>
+                  </div>
+                </div>
               </div>
               
               <div className="flex flex-wrap gap-4 mb-8">
@@ -123,8 +144,11 @@ const Product = () => {
                 </div>
               </div>
               
-              <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
-                <Link to="/kontakt">Jetzt anfragen & 10% Rabatt sichern</Link>
+              <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 group">
+                <Link to="/kontakt" className="flex items-center gap-2">
+                  <Gift className="h-5 w-5 group-hover:animate-pulse" />
+                  Jetzt anfragen & bis zu 10% sparen
+                </Link>
               </Button>
             </div>
           </div>
