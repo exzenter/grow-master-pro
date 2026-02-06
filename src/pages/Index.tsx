@@ -137,6 +137,24 @@ const Index = () => {
         </div>
       </section>
       
+      {/* USP Banner */}
+      <section className="py-6 bg-primary/10 border-y border-primary/20">
+        <div className="container mx-auto px-4">
+          <Link 
+            to="/kontakt" 
+            className="flex items-center justify-center gap-3 text-center group"
+          >
+            <span className="bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded">EXKLUSIV</span>
+            <span className="text-sm md:text-base font-medium group-hover:text-primary transition-colors">
+              Bis zu <span className="font-bold text-primary">10% Rabatt</span> bei Bestellung über uns – persönliche Beratung inklusive
+            </span>
+            <svg className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+      </section>
+
       {/* Next Page Navigation */}
       <section className="py-16 bg-gradient-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/10" />

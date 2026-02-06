@@ -370,38 +370,48 @@ const Product = () => {
           
           {/* Why Order Through Us */}
           <section className="mb-20">
-            <Card className="p-8 border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-accent/10">
-              <h2 className="text-2xl font-bold mb-6 text-center">Warum über uns bestellen?</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="h-5 w-5 text-primary" />
+            <Card className="p-10 border-4 border-primary bg-gradient-to-br from-primary/15 to-accent/15 shadow-elevated relative overflow-hidden">
+              {/* Decorative accent */}
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-primary" />
+              
+              <h2 className="text-2xl font-bold mb-8 text-center">Warum über uns bestellen?</h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                <div className="flex items-start gap-4 p-4 rounded-lg bg-background/50">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Persönliche Beratung vom Experten</h3>
-                    <p className="text-sm text-muted-foreground">
+                    <h3 className="font-bold text-lg mb-2">Persönliche Beratung vom Experten</h3>
+                    <p className="text-muted-foreground">
                       Bei Fragen zur Anwendung, Dosierung oder Pflege bin ich Ihr direkter Ansprechpartner. 
                       Da ich das Produkt seit der Entwicklungsphase begleite und selbst ausgiebig getestet habe, 
                       kann ich Ihnen aus erster Hand weiterhelfen.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <Package className="h-5 w-5 text-primary" />
+                
+                {/* Highlighted Discount USP */}
+                <div className="flex items-start gap-4 p-4 rounded-lg bg-primary/20 border-2 border-primary/50 relative">
+                  <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                    EXKLUSIV
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                    <Package className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Bis zu 10% Rabatt sichern</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Als direkter Partner von NeulandHum kann ich Ihnen exklusive Konditionen anbieten – 
+                    <h3 className="font-bold text-lg mb-2 text-primary">Bis zu 10% Rabatt sichern!</h3>
+                    <p className="text-muted-foreground">
+                      Als direkter Partner von NeulandHum kann ich Ihnen <span className="font-semibold text-foreground">exklusive Konditionen</span> anbieten – 
                       sowohl für Privatkunden als auch für Händler und Gewerbetreibende.
                     </p>
                   </div>
                 </div>
               </div>
+              
               <div className="text-center">
-                <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
-                  <Link to="/kontakt">Jetzt Kontakt aufnehmen</Link>
+                <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-10">
+                  <Link to="/kontakt">Jetzt Kontakt aufnehmen & sparen</Link>
                 </Button>
               </div>
             </Card>
