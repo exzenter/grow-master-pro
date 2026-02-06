@@ -1,4 +1,6 @@
-# Welcome to your Lovable project
+# GrowMaster Pro - Cannabis Substrat Website
+
+> Last build trigger: 2026-02-06
 
 ## Project info
 
