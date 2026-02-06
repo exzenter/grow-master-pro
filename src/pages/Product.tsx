@@ -370,20 +370,21 @@ const Product = () => {
           
           {/* Why Order Through Us */}
           <section className="mb-20">
-            <Card className="p-10 border-4 border-primary bg-gradient-to-br from-primary/15 to-accent/15 shadow-elevated relative overflow-hidden">
-              {/* Decorative accent */}
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-primary" />
+            <Card className="p-12 border-[6px] border-primary bg-gradient-to-br from-primary/20 to-accent/20 shadow-elevated relative overflow-hidden">
+              {/* Decorative accents */}
+              <div className="absolute top-0 left-0 w-full h-3 bg-gradient-primary" />
+              <div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-primary" />
               
-              <h2 className="text-2xl font-bold mb-8 text-center">Warum über uns bestellen?</h2>
+              <h2 className="text-3xl font-bold mb-10 text-center">Warum über uns bestellen?</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                <div className="flex items-start gap-4 p-4 rounded-lg bg-background/50">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="h-6 w-6 text-primary" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                <div className="flex items-start gap-5 p-6 rounded-xl bg-background/60 border border-border">
+                  <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="h-7 w-7 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2">Persönliche Beratung vom Experten</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="font-bold text-xl mb-3">Persönliche Beratung vom Experten</h3>
+                    <p className="text-muted-foreground text-lg">
                       Bei Fragen zur Anwendung, Dosierung oder Pflege bin ich Ihr direkter Ansprechpartner. 
                       Da ich das Produkt seit der Entwicklungsphase begleite und selbst ausgiebig getestet habe, 
                       kann ich Ihnen aus erster Hand weiterhelfen.
@@ -392,17 +393,17 @@ const Product = () => {
                 </div>
                 
                 {/* Highlighted Discount USP */}
-                <div className="flex items-start gap-4 p-4 rounded-lg bg-primary/20 border-2 border-primary/50 relative">
-                  <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                    EXKLUSIV
+                <div className="flex items-start gap-5 p-6 rounded-xl bg-primary/25 border-4 border-primary relative">
+                  <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground text-sm font-bold px-5 py-2 rounded-full shadow-lg animate-pulse">
+                    ✨ EXKLUSIV ✨
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                    <Package className="h-6 w-6 text-primary-foreground" />
+                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                    <Package className="h-7 w-7 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2 text-primary">Bis zu 10% Rabatt sichern!</h3>
-                    <p className="text-muted-foreground">
-                      Als direkter Partner von NeulandHum kann ich Ihnen <span className="font-semibold text-foreground">exklusive Konditionen</span> anbieten – 
+                    <h3 className="font-bold text-2xl mb-3 text-primary">Bis zu 10% Rabatt sichern!</h3>
+                    <p className="text-muted-foreground text-lg">
+                      Als direkter Partner von NeulandHum kann ich Ihnen <span className="font-bold text-foreground">exklusive Konditionen</span> anbieten – 
                       sowohl für Privatkunden als auch für Händler und Gewerbetreibende.
                     </p>
                   </div>
@@ -410,7 +411,7 @@ const Product = () => {
               </div>
               
               <div className="text-center">
-                <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-10">
+                <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-xl px-14 py-6 h-auto">
                   <Link to="/kontakt">Jetzt Kontakt aufnehmen & sparen</Link>
                 </Button>
               </div>
