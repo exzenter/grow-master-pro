@@ -137,38 +137,21 @@ const Index = () => {
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/10" />
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Bereit für optimales Pflanzenwachstum?
-          </h2>
-          <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            Überzeugen Sie sich selbst von der Qualität unseres Substrats
-          </p>
-          <Link to="/produkt">
-            <Button size="lg" variant="secondary" className="shadow-elevated">
-              Jetzt mehr erfahren
-            </Button>
-          </Link>
-        </div>
-      </section>
-
       {/* Next Page Navigation */}
-      <section className="py-16 border-t border-border">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-primary/10" />
+        <div className="container mx-auto px-4 relative z-10">
           <Link 
             to="/produkt" 
-            className="group flex items-center justify-between p-6 rounded-xl bg-card hover:bg-primary/5 border border-border hover:border-primary/30 transition-all duration-300"
+            className="group flex items-center justify-between p-8 rounded-xl bg-background/10 backdrop-blur-sm hover:bg-background/20 border border-primary-foreground/20 hover:border-primary-foreground/40 transition-all duration-300"
           >
             <div>
-              <p className="text-sm text-muted-foreground mb-1">Weiter zum</p>
-              <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">Produkt</h3>
-              <p className="text-muted-foreground mt-1">Erfahren Sie alles über unser Premium-Substrat</p>
+              <p className="text-sm text-primary-foreground/80 mb-1">Bereit für optimales Pflanzenwachstum?</p>
+              <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground group-hover:scale-[1.02] transition-transform origin-left">Jetzt unser Produkt entdecken</h3>
+              <p className="text-primary-foreground/80 mt-2">Überzeugen Sie sich selbst von der Qualität unseres Premium-Substrats</p>
             </div>
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-              <svg className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-14 h-14 rounded-full bg-primary-foreground/20 flex items-center justify-center group-hover:bg-primary-foreground group-hover:scale-110 transition-all duration-300 flex-shrink-0 ml-4">
+              <svg className="w-7 h-7 text-primary-foreground group-hover:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </div>
