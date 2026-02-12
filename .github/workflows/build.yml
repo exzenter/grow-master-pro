@@ -37,3 +37,17 @@ jobs:
           git add dist -f
           git diff --staged --quiet || git commit -m "Build: Update dist folder [skip ci]"
           git push
+
+      - name: Get Cloudways OAuth Token
+        id: cloudways_token
+        run: |
+          RESPONSE=$(curl -s -X POST "https://api.cloudways.com/api/v1/oauth/access_token" \
+            -d "email=${{ secrets.CLOUDWAYS_EMAIL }}&api_key=${{ secrets.CLOUDWAYS_API_KEY }}")
+          TOKEN=$(echo $RESPONSE | python3 -c "import sys,json; print(json.load(sys.stdin)['access_token'])")
+          echo "token=$TOKEN" >> $GITHUB_OUTPUT
+
+      - name: Trigger Cloudways Git Pull
+        run: |
+          curl -s -X POST "https://api.cloudways.com/api/v1/git/pull" \
+            -H "Authorization: Bearer ${{ steps.cloudways_token.outputs.token }}" \
+            -d "server_id=${{ secrets.CLOUDWAYS_SERVER_ID }}&app_id=${{ secrets.CLOUDWAYS_APP_ID }}&branch_name=main&deploy_path=public_html/"
