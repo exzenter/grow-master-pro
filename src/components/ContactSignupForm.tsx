@@ -5,8 +5,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CheckCircle2, Mail, User, MessageSquare, Percent, Building2, Package } from "lucide-react";
+import { CheckCircle2, Mail, User, MessageSquare, Percent, Building2, Package, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const customerTypes = [
   { value: "privat", label: "Privat" },
@@ -24,6 +25,7 @@ const quantityOptions = [
 
 const ContactSignupForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,45 +36,36 @@ const ContactSignupForm = () => {
   });
   const { toast } = useToast();
 
-  const getPrefilledMessage = () => {
-    const customerLabel = customerTypes.find(c => c.value === formData.customerType)?.label || "";
-    const quantityLabel = quantityOptions.find(q => q.value === formData.quantity)?.label || "";
-    
-    let prefilledText = `Ich bin ein ${customerLabel}kunde und interessiere mich für Ihr Premium-Substrat.\n\n`;
-    prefilledText += `Gewünschte Menge: ${quantityLabel}\n\n`;
-    
-    if (formData.customerType === "gewerblich") {
-      prefilledText += "Als Gewerbetreibender interessiere ich mich für Ihre B2B-Konditionen.\n\n";
-    }
-    
-    if (formData.message) {
-      prefilledText += `Zusätzliche Nachricht:\n${formData.message}\n\n`;
-    }
-    
-    return prefilledText;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     
-    const subject = encodeURIComponent(`Kontaktanfrage (${customerTypes.find(c => c.value === formData.customerType)?.label || ""})`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\n` +
-      `E-Mail: ${formData.email}\n` +
-      `Telefon: ${formData.phone || "Nicht angegeben"}\n` +
-      `Kundentyp: ${customerTypes.find(c => c.value === formData.customerType)?.label || ""}\n` +
-      `Interessierte Menge: ${quantityOptions.find(q => q.value === formData.quantity)?.label || ""}\n\n` +
-      `---\n\n` +
-      getPrefilledMessage()
-    );
-    
-    window.location.href = `mailto:info@premium-erde.de?subject=${subject}&body=${body}`;
-    
-    setIsSubmitted(true);
-    toast({
-      title: "E-Mail-Programm geöffnet!",
-      description: "Bitte senden Sie die E-Mail über Ihr E-Mail-Programm ab.",
-    });
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || "Nicht angegeben",
+      customerType: customerTypes.find(c => c.value === formData.customerType)?.label || "",
+      quantity: quantityOptions.find(q => q.value === formData.quantity)?.label || "",
+      message: formData.message || "Keine zusätzliche Nachricht",
+    };
+
+    try {
+      await emailjs.send("Johannes", "template_5vcg5qe", templateParams, "eB6V0V093uz5UVRUI");
+      setIsSubmitted(true);
+      toast({
+        title: "Anfrage gesendet!",
+        description: "Vielen Dank! Wir melden uns in Kürze bei Ihnen.",
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Fehler beim Senden",
+        description: "Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -225,9 +218,17 @@ const ContactSignupForm = () => {
         <Button 
           type="submit" 
           size="lg" 
+          disabled={isLoading}
           className="w-full bg-gradient-primary hover:shadow-glow transition-all duration-300"
         >
-          Jetzt anfragen & 10% Rabatt sichern
+          {isLoading ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Wird gesendet...
+            </>
+          ) : (
+            "Jetzt anfragen & 10% Rabatt sichern"
+          )}
         </Button>
 
         <p className="text-xs text-muted-foreground text-center">
