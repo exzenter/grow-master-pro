@@ -117,7 +117,7 @@ const ContactSignupForm = () => {
           <div className="space-y-2">
             <Label htmlFor="name" className="flex items-center gap-2">
               <User className="h-4 w-4" />
-              Name *
+              Name
             </Label>
             <Input
               id="name"
@@ -125,7 +125,6 @@ const ContactSignupForm = () => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Ihr Name"
-              required
               className="bg-background/50"
             />
           </div>
@@ -151,9 +150,9 @@ const ContactSignupForm = () => {
           <div className="space-y-2">
             <Label className="flex items-center gap-2">
               <Building2 className="h-4 w-4" />
-              Kundentyp *
+              Kundentyp
             </Label>
-            <Select value={formData.customerType} onValueChange={(value) => handleSelectChange("customerType", value)} required>
+            <Select value={formData.customerType} onValueChange={(value) => handleSelectChange("customerType", value)}>
               <SelectTrigger className="bg-background/50">
                 <SelectValue placeholder="Bitte wählen..." />
               </SelectTrigger>
@@ -169,9 +168,9 @@ const ContactSignupForm = () => {
           <div className="space-y-2">
             <Label className="flex items-center gap-2">
               <Package className="h-4 w-4" />
-              Interessierte Menge *
+              Interessierte Menge
             </Label>
-            <Select value={formData.quantity} onValueChange={(value) => handleSelectChange("quantity", value)} required>
+            <Select value={formData.quantity} onValueChange={(value) => handleSelectChange("quantity", value)}>
               <SelectTrigger className="bg-background/50">
                 <SelectValue placeholder="Bitte wählen..." />
               </SelectTrigger>
