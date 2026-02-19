@@ -50,7 +50,7 @@ const ContactSignupForm = () => {
     };
 
     try {
-      await emailjs.send("Johannes", "template_5vcg5qe", templateParams, "eB6V0V093uz5UVRUI");
+      await emailjs.send("service_9agg9b4", "template_5vcg5qe", templateParams, "eB6V0V093uz5UVRUI");
       setIsSubmitted(true);
       toast({
         title: "Anfrage gesendet!",
