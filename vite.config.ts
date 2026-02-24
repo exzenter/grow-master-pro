@@ -4,6 +4,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
+const timestamp = Date.now();
+
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
@@ -13,6 +15,15 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/[name]-${timestamp}-[hash].js`,
+        chunkFileNames: `assets/[name]-${timestamp}-[hash].js`,
+        assetFileNames: `assets/[name]-${timestamp}-[hash].[ext]`,
+      },
     },
   },
 }));
