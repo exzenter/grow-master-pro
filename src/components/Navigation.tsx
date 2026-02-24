@@ -30,7 +30,7 @@ const Navigation = () => {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+              className="md:hidden p-2 rounded-lg text-foreground hover:bg-muted/50 transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Menü öffnen"
             >
@@ -61,7 +61,7 @@ const Navigation = () => {
       {mobileOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
           <div className="fixed inset-0 bg-black/40" onClick={() => setMobileOpen(false)} />
-          <div className="fixed top-16 left-0 right-0 z-50 bg-background/98 backdrop-blur-md border-b border-border shadow-lg">
+          <div className="fixed top-16 left-0 right-0 z-50 bg-white border-b border-border shadow-lg">
             <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
